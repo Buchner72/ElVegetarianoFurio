@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace ElVegetarianoFurio.Controllers
 {
     // Daten von Backend to Frontend
+    //Test Für GiTGub
 
     [ApiController]              //Sagt! Hier haben wir ein API-Controller, der Http Anfragen mit Daten beantwortet!
     [Route("api/[controller]")]     //Definiert die Route. Jede Methode ist von außen erreichbar (wenn public)
