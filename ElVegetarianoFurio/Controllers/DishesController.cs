@@ -23,7 +23,8 @@ namespace ElVegetarianoFurio.Controllers
             _repository = repository;
         }
 
-        [HttpGet] //Zugewiesenes Http-Verb "HttpGet wird automatisch aufgerufen"
+        // HttpGet wird automatisch abgerufen
+        [HttpGet] 
         public IEnumerable<Dish> Get()
         {
 
@@ -46,7 +47,7 @@ namespace ElVegetarianoFurio.Controllers
             return _repository.GetDishes();
         }
 
-        //Gigt einen einzelnen Datensatz zurück
+        //Http+id: Gibt einen einzelnen Datensatz zurück
         //Damit das ASP.Net Framwork weiß, welcher Wert an den Parameter id als Argument übergeben werden muss. 
         [HttpGet("{id}")]                       //Als weterer Wert hinter api/controller übergebne wird. (api/dishes/1)
         public IActionResult Get(int id)        //IActionResult anstelle von "public Dish Get(int id)" wegen StatusCode 404, wenn ID nicht vorhanden.
@@ -59,7 +60,7 @@ namespace ElVegetarianoFurio.Controllers
             return Ok(dish);             //Status: 200 OK
         }
 
-        //Wenn man neue Datensätze anlegen möchte, verwendet man da Http-Verb "Post"
+        //HttpPost: Wenn man neue Datensätze anlegen möchte
         //So ein Objekt wird Typischer weise im Body der Nachricht übergebn.
         //Dieshalb muss man dem Parameter mitteilen das er aus dem Bodey befüllt wird,
         //und nich aus dem Query
@@ -84,7 +85,7 @@ namespace ElVegetarianoFurio.Controllers
             return CreatedAtAction("Get", new { id = result.Id }, result);
         }
 
-        //HttpPut für eine vollständige Änderung. Für Teile wäre es ein HttpPatch
+        //HttpPut+id für eine vollständige Änderung. Für Teile wäre es ein HttpPatch
         // Da ein HttpPut immer an die gleiche Adresse geschickt wird, über die auch die Einzelansicht geladen worden ist
         // wird auch hier die Id für den Datensatz der geändert werden soll übergeben
         [HttpPut("{id}")]
@@ -113,7 +114,6 @@ namespace ElVegetarianoFurio.Controllers
             var result = _repository.UpdateDish(dish);
             return Ok(result);
         }
-
 
     }
 }
