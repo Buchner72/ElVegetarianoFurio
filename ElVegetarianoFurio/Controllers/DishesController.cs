@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ElVegetarianoFurio.Controllers
 {
     // Daten von Backend to Frontend
-    //Test Für GiTGub
+
 
     [ApiController]              //Sagt! Hier haben wir ein API-Controller, der Http Anfragen mit Daten beantwortet!
     [Route("api/[controller]")]     //Definiert die Route. Jede Methode ist von außen erreichbar (wenn public)
@@ -59,11 +59,11 @@ namespace ElVegetarianoFurio.Controllers
             return Ok(dish);             //Status: 200 OK
         }
 
-
+        //Wenn man neue Datensätze anlegen möchte, verwendet man da Http-Verb "Post"
         //So ein Objekt wird Typischer weise im Body der Nachricht übergebn.
         //Dieshalb muss man dem Parameter mitteilen das er aus dem Bodey befüllt wird,
         //und nich aus dem Query
-        [HttpPost] //Wenn man neue Datensätze anlegen möchte, verwendet man da Http-Verb "Post"
+        [HttpPost]
         public IActionResult Post([FromBody] Dish dish)  //ASP MVC Modelbinder. 
         {
             #region Einfacher Aufruf
@@ -82,6 +82,36 @@ namespace ElVegetarianoFurio.Controllers
 
             var result = _repository.CreateDish(dish);
             return CreatedAtAction("Get", new { id = result.Id }, result);
+        }
+
+        //HttpPut für eine vollständige Änderung. Für Teile wäre es ein HttpPatch
+        // Da ein HttpPut immer an die gleiche Adresse geschickt wird, über die auch die Einzelansicht geladen worden ist
+        // wird auch hier die Id für den Datensatz der geändert werden soll übergeben
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Dish dish)
+        {
+
+            #region Fehlerhafte Eingabe prüfen
+
+            if (id != dish.Id)
+            {
+                return BadRequest();
+            }
+            //Prüfen ob der ModelState gültig ist (z.B: Falls kein Name angegeben wurde, wie in Dish.cs als Required gefordert )
+            if (!ModelState.IsValid) //Status: 400 Bad Request 
+            {
+                return BadRequest(ModelState);
+            }
+            //Wenn jemand eine Id übergibt zu der es keinen Eintrag gibt
+            if (_repository.GetDishById(id) == null)
+            {
+                return NotFound();
+            }
+
+            #endregion
+
+            var result = _repository.UpdateDish(dish);
+            return Ok(result);
         }
 
 

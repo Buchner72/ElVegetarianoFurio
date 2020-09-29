@@ -71,8 +71,22 @@ namespace ElVegetarianoFurio.Repositories
 
         public Dish UpdateDish(Dish dish)
         {
-            throw new NotImplementedException();
+            var dishes = GetDishes().ToList();
+            var dishToUpdate = dishes.SingleOrDefault(x => x.Id == dish.Id);
+            dishToUpdate.Name = dish.Name; //Es gäbe auch die möglichkeit Framework: Automapper (Automatisch von rechts nach links zu schreiben)
+            dishToUpdate.Price = dish.Price;
+            dishToUpdate.Description = dish.Description;
+            dishToUpdate.CategoryId = dish.CategoryId;
+
+            var option = new JsonSerializerOptions
+            {
+                WriteIndented = true  // Zeilenumbruch im Textfile
+            };
+            var json = JsonSerializer.Serialize(dishes, option);
+            File.WriteAllText(_path, json);
+            return dishToUpdate;
         }
+
     }
 
 }

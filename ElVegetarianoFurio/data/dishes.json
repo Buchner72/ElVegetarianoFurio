@@ -178,8 +178,8 @@
   {
     "Id": 23,
     "Name": "Hallo Salata",
-    "Description": "Salat mit alle Resten aus der K\u00FCche",
-    "Price": 9.49,
+    "Description": "Salat mit dem Besten aus der K\u00FCche",
+    "Price": 19.49,
     "CategoryId": 1,
     "Category": null
   }
