@@ -1,0 +1,186 @@
+[
+  {
+    "Id": 1,
+    "Name": "Ensalada de Casa",
+    "Description": "Salat nach Art des Hauses. Gemischter Salat, Mais, Paprika, K\u00E4se, Zwiebeln",
+    "Price": 3.49,
+    "CategoryId": 1,
+    "Category": null
+  },
+  {
+    "Id": 2,
+    "Name": "Ensalada furia",
+    "Description": "Gemischter Salat mit Chillis, Paprika, Radieschen und Zwiebeln (scharf!)",
+    "Price": 3.99,
+    "CategoryId": 1,
+    "Category": null
+  },
+  {
+    "Id": 3,
+    "Name": "Sopa de Tomate",
+    "Description": "Tomatensuppe",
+    "Price": 3.29,
+    "CategoryId": 2,
+    "Category": null
+  },
+  {
+    "Id": 4,
+    "Name": "Crema de verduras",
+    "Description": "Gem\u00FCsecremesuppe",
+    "Price": 4.39,
+    "CategoryId": 2,
+    "Category": null
+  },
+  {
+    "Id": 5,
+    "Name": "Tortilla de patatas",
+    "Description": "Spanisches Omlett aus Eiern und Kartoffeln",
+    "Price": 4.99,
+    "CategoryId": 3,
+    "Category": null
+  },
+  {
+    "Id": 6,
+    "Name": "Patatas bravas",
+    "Description": "Gebratene Kartoffelst\u00FCcke in pikanter Sauce",
+    "Price": 3.99,
+    "CategoryId": 3,
+    "Category": null
+  },
+  {
+    "Id": 7,
+    "Name": "Pimientos al grill",
+    "Description": "Gegrillte Paprika",
+    "Price": 2.99,
+    "CategoryId": 3,
+    "Category": null
+  },
+  {
+    "Id": 8,
+    "Name": "Pan con alioli",
+    "Description": "Ailoli mit Brot",
+    "Price": 2.29,
+    "CategoryId": 3,
+    "Category": null
+  },
+  {
+    "Id": 9,
+    "Name": "Pan con tomate y ajo",
+    "Description": "Brot mit Tomate und Knoblauch",
+    "Price": 2.29,
+    "CategoryId": 3,
+    "Category": null
+  },
+  {
+    "Id": 10,
+    "Name": "Tortilla Chips",
+    "Description": "Tortilla Chips mit Salsa Dip, Guacamole oder Alioli",
+    "Price": 1.29,
+    "CategoryId": 3,
+    "Category": null
+  },
+  {
+    "Id": 11,
+    "Name": "Chilli sin carne",
+    "Description": "Vegetarisches Chilli, serviert mit Reis",
+    "Price": 5.39,
+    "CategoryId": 4,
+    "Category": null
+  },
+  {
+    "Id": 12,
+    "Name": "Enchiladas de verduras",
+    "Description": "\u00DCberbackene Maistortillas gef\u00FCllt mit Gem\u00FCse",
+    "Price": 4.99,
+    "CategoryId": 4,
+    "Category": null
+  },
+  {
+    "Id": 13,
+    "Name": "Burritos de verduras",
+    "Description": "Weizentortillas gef\u00FCllt mit Gem\u00FCse",
+    "Price": 4.99,
+    "CategoryId": 4,
+    "Category": null
+  },
+  {
+    "Id": 14,
+    "Name": "Arroz con verduras",
+    "Description": "Reis-/Gem\u00FCsepfanne",
+    "Price": 4.49,
+    "CategoryId": 4,
+    "Category": null
+  },
+  {
+    "Id": 15,
+    "Name": "Empanadas de espinacas y ma\u00EDz",
+    "Description": "Teigtaschen gef\u00FCllt mit Spinat und Mais",
+    "Price": 4.49,
+    "CategoryId": 4,
+    "Category": null
+  },
+  {
+    "Id": 16,
+    "Name": "Crema Catalana",
+    "Description": "Katalanische Creme",
+    "Price": 2.49,
+    "CategoryId": 5,
+    "Category": null
+  },
+  {
+    "Id": 17,
+    "Name": "Ensalada de frutas",
+    "Description": "Obstsalat mit frischen Fr\u00FCchten",
+    "Price": 2.99,
+    "CategoryId": 5,
+    "Category": null
+  },
+  {
+    "Id": 18,
+    "Name": "Churros",
+    "Description": "Spritzgeb\u00E4ck mit Zucker",
+    "Price": 1.99,
+    "CategoryId": 5,
+    "Category": null
+  },
+  {
+    "Id": 19,
+    "Name": "Agua mineral",
+    "Description": "Mineralwasser",
+    "Price": 1.59,
+    "CategoryId": 6,
+    "Category": null
+  },
+  {
+    "Id": 20,
+    "Name": "Zumo de manzana",
+    "Description": "Apfelsaft",
+    "Price": 1.59,
+    "CategoryId": 6,
+    "Category": null
+  },
+  {
+    "Id": 21,
+    "Name": "Limonada",
+    "Description": "Zitronenlimonade",
+    "Price": 1.59,
+    "CategoryId": 6,
+    "Category": null
+  },
+  {
+    "Id": 22,
+    "Name": "Caf\u00E9",
+    "Description": "Kaffee",
+    "Price": 1.59,
+    "CategoryId": 6,
+    "Category": null
+  },
+  {
+    "Id": 23,
+    "Name": "Hallo Salata",
+    "Description": "Salat mit alle Resten aus der K\u00FCche",
+    "Price": 9.49,
+    "CategoryId": 1,
+    "Category": null
+  }
+]
