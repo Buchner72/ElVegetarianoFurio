@@ -1,5 +1,6 @@
 ﻿using ElVegetarianoFurio.Models;
 using ElVegetarianoFurio.Repositories;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,16 @@ namespace ElVegetarianoFurio.Controllers
     public class DishesController : ControllerBase          //Methoden aufruf https://localhost:44322/api/dishes 
     {
         private readonly IDishRepository _repository;
+        private readonly string _path;
 
-        public DishesController(IDishRepository repository)
+        public DishesController(IDishRepository repository, IWebHostEnvironment env)
         {
             _repository = repository;
+            _path = System.IO.Path.Combine(env.ContentRootPath, "data", "images","dishes");
         }
 
         // HttpGet wird automatisch abgerufen
-        [HttpGet] 
+        [HttpGet]
         public IEnumerable<Dish> Get()
         {
 
@@ -118,13 +121,26 @@ namespace ElVegetarianoFurio.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            if (_repository.GetDishById(id)==null)
+            if (_repository.GetDishById(id) == null)
             {
                 return NotFound();
             }
 
             _repository.DeleteDish(id);
             return NoContent();
+        }
+
+        //   api/dishes/1/image
+        [HttpGet("{id}/image")]
+        public IActionResult Image(int id)
+        {
+            var file = System.IO.Path.Combine(_path, $"{id}.jpg");
+            if (System.IO.File.Exists(file))
+            {
+                var bytes = System.IO.File.ReadAllBytes(file);
+                return File(bytes, "image/jpeg");
+            }
+            return NotFound();
         }
 
     }
