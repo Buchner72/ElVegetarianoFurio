@@ -115,5 +115,17 @@ namespace ElVegetarianoFurio.Controllers
             return Ok(result);
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            if (_repository.GetDishById(id)==null)
+            {
+                return NotFound();
+            }
+
+            _repository.DeleteDish(id);
+            return NoContent();
+        }
+
     }
 }

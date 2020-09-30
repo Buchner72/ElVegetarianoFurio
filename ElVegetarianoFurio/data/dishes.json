@@ -174,13 +174,5 @@
     "Price": 1.59,
     "CategoryId": 6,
     "Category": null
-  },
-  {
-    "Id": 23,
-    "Name": "Hallo Salata",
-    "Description": "Salat mit dem Besten aus der K\u00FCche",
-    "Price": 19.49,
-    "CategoryId": 1,
-    "Category": null
   }
 ]

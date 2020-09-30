@@ -11,6 +11,6 @@ namespace ElVegetarianoFurio.Repositories
         Dish GetDishById(int id);
         Dish CreateDish(Dish dish);
         Dish UpdateDish(Dish dish);
-        Dish DeleteDish(int id);
+        void DeleteDish(int id);
     }
 }
