@@ -169,8 +169,8 @@
   },
   {
     "Id": 22,
-    "Name": "Caf\u00E9",
-    "Description": "Kaffee",
+    "Name": "Caf\u00E9 Test",
+    "Description": "Kaffee dff",
     "Price": 1.59,
     "CategoryId": 6,
     "Category": null
