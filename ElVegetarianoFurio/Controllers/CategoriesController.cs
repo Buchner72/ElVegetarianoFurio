@@ -15,10 +15,12 @@ namespace ElVegetarianoFurio.Controllers
     public class CategoriesController : Controller
     {
         private readonly ICategoryRepository _repository;
+        private readonly string _pathImages;
 
         public CategoriesController(ICategoryRepository repository, IWebHostEnvironment env)
         {
             _repository = repository;
+            _pathImages = System.IO.Path.Combine(env.ContentRootPath, "data", "images", "categories");
         }
 
         [HttpGet]
@@ -81,6 +83,18 @@ namespace ElVegetarianoFurio.Controllers
 
             _repository.DeleteCategory(id);
             return NoContent();
+        }
+
+        [HttpGet("{id}/image")]
+        public IActionResult Image(int id)
+        {
+            var file = System.IO.Path.Combine(_pathImages, $"{id}.jpg");
+            if (System.IO.File.Exists(file))
+            {
+                var bytes = System.IO.File.ReadAllBytes(file);
+                return File(bytes, "image/jpeg");
+            }
+            return NotFound();
         }
     }
 }
