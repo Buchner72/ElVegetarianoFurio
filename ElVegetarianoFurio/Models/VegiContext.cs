@@ -15,6 +15,7 @@ namespace ElVegetarianoFurio.Models
 
         }  
 
+        //Das EF wir für mich zwei Tabellen anlegen, Dishes und Caregries
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Category> Categories { get; set; }
     }

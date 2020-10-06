@@ -24,6 +24,7 @@ namespace ElVegetarianoFurio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //(localdb)\mssqllocaldb
             services.AddDbContext<VegiContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("VegiContext")));
 
