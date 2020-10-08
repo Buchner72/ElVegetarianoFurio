@@ -30,8 +30,13 @@ namespace ElVegetarianoFurio
 
             services.AddControllersWithViews();
 
-            services.AddScoped<IDishRepository, FileDishRepository>(); //Jedesmal wenn ein IDishRepository Anfrage, ein FileDishRepository erhalte.
-            services.AddScoped<ICategoryRepository, FileCategoryRepository>();
+            //Datei definierten Repositories
+            //services.AddScoped<IDishRepository, FileDishRepository>(); //Jedesmal wenn ein IDishRepository Anfrage, ein FileDishRepository erhalte.
+            //services.AddScoped<ICategoryRepository, FileCategoryRepository>();
+
+            //EF definierte Repositories
+            services.AddScoped<IDishRepository, EfDishRepository>(); //
+            services.AddScoped<ICategoryRepository, EfCategoryRepository>();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

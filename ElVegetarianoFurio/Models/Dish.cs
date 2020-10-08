@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ElVegetarianoFurio.Models
@@ -22,6 +23,8 @@ namespace ElVegetarianoFurio.Models
         public double Price { get; set; }
 
         public int CategoryId { get; set; } //Bedeutet für das EF CategoryId ein Fremdschöüssel werden wird zu der Tabelle Category
+      
+        [JsonIgnore] // Sonst Fehler im Postman GetCategories
         public Category Category { get; set; }
 
     }
