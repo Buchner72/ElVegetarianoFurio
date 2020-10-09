@@ -26,6 +26,6 @@ namespace ElVegetarianoFurio.Models
       
         [JsonIgnore] // Sonst Fehler im Postman GetCategories
         public Category Category { get; set; }
-        g
+        
     }
 }
