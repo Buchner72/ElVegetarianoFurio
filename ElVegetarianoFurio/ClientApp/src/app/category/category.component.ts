@@ -18,3 +18,6 @@ export class CategoryComponent implements OnInit {
   }
 
 }
+
+//Erst durch subscribe wird meine Methode erst aufgerufen
+//Daten werden abgerufen und können in der category.component.html angezeigt werden
