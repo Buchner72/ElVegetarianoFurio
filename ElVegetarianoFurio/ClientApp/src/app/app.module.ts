@@ -11,7 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CategoryComponent } from './category/category.component';
-
+import { CategoryService } from './category/category.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { CategoryComponent } from './category/category.component';
     BrowserAnimationsModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
