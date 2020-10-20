@@ -14,13 +14,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { CategoryComponent } from './category/category.component';
 import { CategoryService } from './category/category.service';
+import { DishListComponent } from './dish-list/dish-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CategoryComponent
+    CategoryComponent,
+    DishListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,6 +30,7 @@ import { CategoryService } from './category/category.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: CategoryComponent, pathMatch: 'full' },
+      { path: 'categories/:categoryId/dishes', component: DishListComponent }
     ]),
     BrowserAnimationsModule,
     MatToolbarModule,

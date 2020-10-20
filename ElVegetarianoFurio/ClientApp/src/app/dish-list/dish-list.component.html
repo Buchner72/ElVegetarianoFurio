@@ -1,0 +1,19 @@
+<!--
+  Route definieren in app.module.ts
+  { path: 'categories/:categoryId/dishes',component: DishListComponent }
+
+  Link setzten auf categories/:categoryId/dishes diese Adresse
+  dazu egehn wir in die category.component.html
+
+  Anpassen:
+  (alt)
+  <button mat-button>Details</button>
+  Route einfügen
+  (neu)
+  <button mat-button [routerLink]="['/categories', category.id, 'dishes']">Details</button>
+  beachte category.id ist kein string
+
+  hier will ich die category in deser componete auslesen zu wechsel in
+  dish-list.commponent.ts
+ -->
+CategoryId: {{categoryId}}
