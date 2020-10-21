@@ -43,7 +43,16 @@ namespace ElVegetarianoFurio.Repositories
 
         public Category GetCategoryById(int id)
         {
-            var  category = _vegiContext.Categories.Find(id);
+            //var  category = _vegiContext.Categories.Find(id);
+            //return category;
+
+            //Da es kein LasyLoding (nachladen) in Ef gibt muss ich das hier manuell bewerkstäligen
+            var category = _vegiContext.Categories.Find(id);
+            //Wenn ich eine Entität geladen habe und möchte dazu abhängige Daten laden     
+            //an Collection kann ich  jetzt über einen Lambta ausdruck die Collektion übergeben
+            //die ich gerne mitladen würde "x.Dishes" und rufe dazu die Funktion .Load() auf
+            _vegiContext.Entry(category).Collection(x => x.Dishes).Load();
+
             return category;
         }
 

@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\category\category.ts" />
+    <None Remove="ClientApp\src\app\dish\dish.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

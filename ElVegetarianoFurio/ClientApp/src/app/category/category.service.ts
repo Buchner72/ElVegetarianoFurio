@@ -10,9 +10,19 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
+  //Nur in der Lage eine aktuelle Liste der Categorien zu laden (keine dishes)
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>('/api/categories');
   }
+
+  getCategory(id: number): Observable<Category> {
+    return this.http.get<Category>(`api/categories/${id}`); //Backstick schreibeweise "`" Axion (rechts oben von ß), somit kann man ${id} als platzhalter in den String schreiben
+    //Jetzt noch die category.ts datei erweitern (dishes:Dish[];)
+    //Weiter in der dish-list.component.ts
+  }
+
+
+
 }
 
 //Hauptaufgabe des Service soll sein die Liste der Categorien zurückzugeben

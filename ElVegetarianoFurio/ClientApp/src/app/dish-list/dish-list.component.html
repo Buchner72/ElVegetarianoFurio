@@ -16,4 +16,19 @@
   hier will ich die category in deser componete auslesen zu wechsel in
   dish-list.commponent.ts
  -->
-CategoryId: {{categoryId}}
+<!-- CategoryId: {{categoryId}} -->
+
+<h1>{{category?.name}}</h1>  <!--? Elvisoperator damit wird sichergestellt, für den Fall das category Null ist kein fehler beim ZUgriff passert-->
+
+<mat-card class="dish-card" *ngFor="let dish of category?.dishes">
+  <mat-card-header>
+    <mat-card-title>{{dish.name}}</mat-card-title>
+    <mat-card-subtitle>{{dish.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="/api/dishes/{{dish.id}}/image" alt="Foto von {{dish.name}}" />
+
+  <mat-card-footer align="right" class="dish-card-footer">
+    {{dish.price | currency:'EUR'}}
+  </mat-card-footer>
+</mat-card>
+
