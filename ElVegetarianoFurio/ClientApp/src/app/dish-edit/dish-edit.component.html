@@ -1,0 +1,49 @@
+<div class="form-Container">
+  <mat-form-field>
+    <input matInput placeholder="Name" name="name" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Beschreibung" name="description" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Preis" name="price" />
+  </mat-form-field>
+</div>
+<button mat-button (click)="saveDish()">Speichern</button>
+<button mat-button (click)="back()">Abbrechen</button>
+
+<!--
+  Nachdem die Komponente nun angelegt ist muss ich jetzt noch dafür sorge tragen,
+  dass die mat-form Filds und die mat-input module auch in der  Anwendung bekannt sind.
+  Das macht man in der app.module.ts
+   MatFormFieldModule,
+   MatInputModule
+
+Dann muss ich noch zu der Komponente Navigieren können:
+  {path: 'dishes/:dishId', component: DishEditComponent}
+
+Als nächstes kann ich nun den Aufruf der Navigation Implementieren.
+Das geschied aus meiner dish-list.component.html
+  Der Button soll mit einem Link ausgestatet werden , mit einem Router Link [routerLink]
+  und der geht zu ['/dishes',dish.id]
+  <button mat-button [routerLink]="['/dishes',dish.id]">Details</button>
+
+Die übergebene dish.id möchte ich jetzt noch in meiner dish-edit.comonent.ts auswerten
+  Dazu werde ich im Construktor ein Objekt initieren lassen das nennt sich route und ist vom Typ ActivatedRoute (route: ActivatedRoute)
+  Für die zurück funktionalität werde ich ausserdem ein Objekt initieren das nenne ich location und ist auch ein Typ Location (location: Location)
+  Innerhalb meiner Componente, werde ich noch die Id welche ich übergebe auslesen,
+  außerdem möchte ich noch die Metoden saveDish und back anlegen saveDish() back()
+  Für saveDish habe ich aktuell noch keinen Code stehen (hier muss zunächst noch ein Service geschrieben werden, der die Daten auch speichert)
+
+  Für back() gilt
+  Hier kann ich auf location zugreifen (this.location) und back() aufrufen (this.location.back())
+  Und damit navigiere ich auf die Seite, die ich zufor geöfnet hatte
+
+  Im ngOnInit() möchte ich nun die Id auslesen.
+  Also schreibe ich const dishId = +this.route.snapshot.paramMap.get('dishId')
+  Der parameter den ich auslesen möchte heißt dishId
+  Das + kommt daher, dass ich einen String zurück erhalte, hir aber einen Nummerischen Wert benötige (also String in Zahl konvertieren)
+
+Jetzt noch das CSS in der dish-edit.component.css anpassen
+
+-->

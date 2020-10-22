@@ -30,5 +30,9 @@
   <mat-card-footer align="right" class="dish-card-footer">
     {{dish.price | currency:'EUR'}}
   </mat-card-footer>
+
+  <mat-card-actions>
+    <button mat-button [routerLink]="['/dishes',dish.id]">Details</button>
+  </mat-card-actions>
 </mat-card>
 
