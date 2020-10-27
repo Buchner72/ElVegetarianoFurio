@@ -19,6 +19,7 @@ import { DishEditComponent } from './dish-edit/dish-edit.component';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { DishService } from './dish/dish.service';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule  
   ],
-  providers: [CategoryService],
+  providers: [CategoryService, DishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,16 @@
-<div class="form-Container">
+<div *ngIf="!dish">
+    Lade...
+</div>
+
+<div class="form-Container" *ngIf="dish">
   <mat-form-field>
-    <input matInput placeholder="Name" name="name" />
+    <input matInput placeholder="Name" name="name" [(ngModel)]="dish.name"/>
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Beschreibung" name="description" />
+    <input matInput placeholder="Beschreibung" name="description" [(ngModel)]="dish.description" />
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Preis" name="price" />
+    <input matInput placeholder="Preis" name="price" [(ngModel)]="dish.price" type="number"/>
   </mat-form-field>
 </div>
 <button mat-button (click)="saveDish()">Speichern</button>
@@ -37,12 +41,12 @@ Die übergebene dish.id möchte ich jetzt noch in meiner dish-edit.comonent.ts a
 
   Für back() gilt
   Hier kann ich auf location zugreifen (this.location) und back() aufrufen (this.location.back())
-  Und damit navigiere ich auf die Seite, die ich zufor geöfnet hatte
+  Und damit navigiere ich auf die Seite, die ich zuvor geöffnet hatte
 
   Im ngOnInit() möchte ich nun die Id auslesen.
   Also schreibe ich const dishId = +this.route.snapshot.paramMap.get('dishId')
   Der parameter den ich auslesen möchte heißt dishId
-  Das + kommt daher, dass ich einen String zurück erhalte, hir aber einen Nummerischen Wert benötige (also String in Zahl konvertieren)
+  Das + kommt daher, dass ich einen String zurück erhalte, hier aber einen Nummerischen Wert benötige (also String in Zahl konvertieren)
 
 Jetzt noch das CSS in der dish-edit.component.css anpassen
 
