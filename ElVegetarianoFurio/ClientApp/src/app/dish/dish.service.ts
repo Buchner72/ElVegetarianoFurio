@@ -17,4 +17,8 @@ export class DishService {
   updateDish(dish: Dish): Observable<Dish> {
     return this.http.put<Dish>(`/api/dishes/${dish.id}`, dish);
   }
+
+  createDish(dish: Dish): Observable<Dish> {
+    return this.http.post<Dish>('/api/dishes', dish);
+  }
 }
