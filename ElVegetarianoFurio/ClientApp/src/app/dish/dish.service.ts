@@ -21,4 +21,8 @@ export class DishService {
   createDish(dish: Dish): Observable<Dish> {
     return this.http.post<Dish>('/api/dishes', dish);
   }
+
+  deleteDish(id: number): Observable<object> {
+    return this.http.delete(`/api/dishes/${id}`);
+  }
 }

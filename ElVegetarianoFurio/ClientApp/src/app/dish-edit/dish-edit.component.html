@@ -1,20 +1,22 @@
 <div *ngIf="!dish">
-    Lade...
+  Lade...
 </div>
 
 <div class="form-Container" *ngIf="dish">
   <mat-form-field>
-    <input matInput placeholder="Name" name="name" [(ngModel)]="dish.name"/>
+    <input matInput placeholder="Name" name="name" [(ngModel)]="dish.name" />
   </mat-form-field>
   <mat-form-field>
     <input matInput placeholder="Beschreibung" name="description" [(ngModel)]="dish.description" />
   </mat-form-field>
   <mat-form-field>
-    <input matInput placeholder="Preis" name="price" [(ngModel)]="dish.price" type="number"/>
+    <input matInput placeholder="Preis" name="price" [(ngModel)]="dish.price" type="number" />
   </mat-form-field>
 </div>
 <button mat-button (click)="saveDish()">Speichern</button>
 <button mat-button (click)="back()">Abbrechen</button>
+<button mat-button (click)="delete()">Löschen</button>
+
 
 <!--
   Nachdem die Komponente nun angelegt ist muss ich jetzt noch dafür sorge tragen,
